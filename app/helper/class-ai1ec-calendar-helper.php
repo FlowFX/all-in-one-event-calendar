@@ -678,7 +678,9 @@ class Ai1ec_Calendar_Helper {
 		$filter_date_clause = ( $page_offset >= 0 )
 			? 'i.end >= %s '
 			: 'i.start < %s ';
-		$order_direction    = ( $page_offset >= 0 ) ? 'ASC' : 'DESC';
+                // Negative pages will be reversed later, but since we (TPLE) don't want that,
+                // we always use ASC in the database query.
+		$order_direction    = 'ASC'; // ( $page_offset >= 0 ) ? 'ASC' : 'DESC';
 		if ( false !== $last_day ) {
 			if ( 0 == $last_day ) {
 				$last_day = (int)$_SERVER['REQUEST_TIME'];
