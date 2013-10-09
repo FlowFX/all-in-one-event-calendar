@@ -195,7 +195,7 @@ class Ai1ec_App_Helper {
 			'show_ui' 						=> true,
 			'show_in_menu' 				=> true,
 			'query_var' 					=> true,
-			'rewrite' 						=> true,
+			'rewrite' 						=> array( 'slug' => 'shows' ),
 			'capability_type'			=> array( 'ai1ec_event', 'ai1ec_events' ),
 			'capabilities'        => array(
 				'read_post'               => 'read_ai1ec_event',
